@@ -30,8 +30,8 @@ jobs:
       - run: pnpm install --frozen-lockfile
 
       # Project pages are served from /<repo>/, so override Vite's base path
-      - run: pnpm build --base="/${{ github.event.repository.name }}/"
-
+      - run: pnpm build 
+      
       - uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
